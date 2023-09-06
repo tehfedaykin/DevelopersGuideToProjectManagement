@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * Black theme for reveal.js. This is the opposite of the 'white' theme.
  *
@@ -6,6 +5,8 @@
  */
 @import url(./fonts/source-sans-pro/source-sans-pro.css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,500;10..48,800&family=Libre+Franklin:ital,wght@0,100;0,600;0,900;1,100;1,400&family=Shadows+Into+Light+Two&display=swap");
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
   color: #222; }
 
@@ -14,12 +15,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
  *********************************************/
 :root {
   --background-color: #100f0f;
-  --main-font: Poppins, sans-serif, Helvetica, sans-serif;
+  --main-font: Libre Franklin, sans-serif;
   --main-font-size: 42px;
   --main-color: #ffffff;
   --block-margin: 20px;
   --heading-margin: 0 0 20px 0;
-  --heading-font: Poppins, sans-serif, Helvetica, sans-serif;
+  --heading-font: Libre Franklin, sans-serif;
   --heading-color: #e8ebdc;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
@@ -32,33 +33,33 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --heading3-size: 1.3em;
   --heading4-size: 1em;
   --code-font: monospace;
-  --link-color: #dc991d;
-  --link-color-hover: #eab85c;
-  --selection-background-color: #efcc89;
+  --link-color: #0aedea;
+  --link-color-hover: #4cf7f5;
+  --selection-background-color: #7dfaf8;
   --selection-color: #fff; }
 
 .reveal-viewport {
   background-color: #100f0f;
-  background-image: url("../../img/elena-mozhvilo-JWtNpyXy-fQ-unsplash.jpg");
+  background-image: url("../../img/lukas-tennie-54Pfu4EK4pc-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
+  background-position: top center;
   background-color: #100f0f; }
 
 .reveal {
-  font-family: "Poppins", sans-serif, Helvetica, sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #ffffff; }
 
 .reveal ::selection {
   color: #fff;
-  background: #efcc89;
+  background: #7dfaf8;
   text-shadow: none; }
 
 .reveal ::-moz-selection {
   color: #fff;
-  background: #efcc89;
+  background: #7dfaf8;
   text-shadow: none; }
 
 .reveal .slides section,
@@ -77,7 +78,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #e8ebdc;
-  font-family: "Poppins", sans-serif, Helvetica, sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
@@ -149,15 +150,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
   list-style-type: none; }
 
 .reveal ul li {
-  margin-bottom: .75em; }
+  margin-bottom: .75em;
+  color: #fff; }
 
 .reveal ul li:before {
-  content: '✨';
+  content: '\2022';
+  color: #0aedea;
+  font-weight: bold;
   margin-left: -20px;
   margin-right: 10px; }
 
 .reveal ul ul {
-  list-style-type: square; }
+  list-style-type: none; }
 
 .reveal ul ul ul {
   list-style-type: circle; }
@@ -265,20 +269,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * LINKS
  *********************************************/
 .reveal a {
-  color: #dc991d;
+  color: #0aedea;
   text-decoration: none;
   transition: color .15s ease;
   text-shadow: none; }
 
 .reveal a:hover {
-  color: #eab85c;
+  color: #4cf7f5;
   text-shadow: none;
   border: none;
   text-decoration: underline; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #986a14; }
+  background: #07a4a2; }
 
 /*********************************************
  * Frame helper
@@ -291,21 +295,21 @@ section.has-light-background, section.has-light-background h1, section.has-light
   transition: all .15s linear; }
 
 .reveal a:hover .r-frame {
-  border-color: #dc991d;
+  border-color: #0aedea;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #dc991d; }
+  color: #0aedea; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #dc991d; }
+  color: #0aedea; }
 
 /*********************************************
  * PRINT BACKGROUND
@@ -315,7 +319,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
     background-color: #100f0f; } }
 
 .accent {
-  color: #dc991d; }
+  color: #0aedea; }
 
 .twitter-overlay {
   position: absolute;
@@ -325,7 +329,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   width: 50%; }
   .twitter-overlay span {
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
-    color: #dc991d;
+    color: #0aedea;
     margin-right: 2.5%;
     float: right;
     font-size: 1.25em;
@@ -379,7 +383,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal pre code {
   font-size: 125%;
-  border: solid 1px #dc991d;
+  border: solid 1px #0aedea;
   padding: 1em;
   border-radius: .25em; }
 
@@ -402,13 +406,123 @@ section.has-light-background, section.has-light-background h1, section.has-light
     flex: 1;
     display: block;
     float: right; }
-    .side-by-side .right ul {
-      font-size: 80%; }
-      .side-by-side .right ul li {
-        margin-bottom: 1em; }
 
 .reveal h2 {
   margin-bottom: 1em; }
 
 .reveal h3 {
-  color: #dc991d; }
+  color: #91ebf4; }
+
+span.strike {
+  --thickness: .15em;
+  --strike: 0;
+  background: linear-gradient(90deg, transparent, currentColor 0) no-repeat right center/calc(var(--strike) * 100%) var(--thickness);
+  text-shadow: none;
+  transition: background-size .4s ease; }
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .grid .card {
+    flex: 1 0 20%;
+    margin: .25em;
+    padding: .25em;
+    background: #76A4C6;
+    box-shadow: 3px 3px 3px #365280; }
+    .grid .card p {
+      text-shadow: none;
+      font-size: 35%; }
+    .grid .card ul, .grid .card li {
+      font-size: 60%;
+      text-shadow: none; }
+
+.kanban {
+  display: flex;
+  flex-direction: row; }
+  .kanban .column {
+    flex: 1 0 30%;
+    padding: .25em;
+    background: #b8b8b8;
+    margin: 0 .125em; }
+    .kanban .column .card {
+      background: #fff;
+      border-top: solid 10px #76A4C6;
+      border-radius: 5px;
+      padding: .5em;
+      margin: 0 0 .5em 0; }
+      .kanban .column .card p {
+        color: #000;
+        text-shadow: none;
+        font-size: 60%; }
+
+.framework-compare {
+  display: flex;
+  flex-direction: row; }
+  .framework-compare .column {
+    flex: 1 0 22%;
+    padding: .25em;
+    margin: 0 .125em; }
+
+.text-left {
+  text-align: left; }
+
+.special-font {
+  font-family: "Shadows Into Light Two", cursive;
+  margin-top: -.5em;
+  font-size: 130%; }
+
+.img-overlap {
+  display: inline;
+  float: left;
+  width: 50%;
+  left: 2em;
+  position: relative; }
+
+.img-overlap2 {
+  display: inline;
+  position: relative;
+  float: left;
+  width: 45%;
+  left: -1em;
+  top: 2em; }
+
+.overlap-blocks {
+  margin-top: 2em; }
+  .overlap-blocks p {
+    font-size: 40%;
+    display: inline;
+    position: relative;
+    float: left;
+    width: 20%; }
+  .overlap-blocks p:nth-child(1) {
+    left: -1em;
+    transform: rotate(-5deg); }
+  .overlap-blocks p:nth-child(2) {
+    top: -1em;
+    transform: rotate(20deg); }
+  .overlap-blocks p:nth-child(3) {
+    bottom: -2em;
+    transform: rotate(-10deg); }
+  .overlap-blocks p:nth-child(4) {
+    top: -1em;
+    transform: rotate(20deg); }
+  .overlap-blocks p:nth-child(5) {
+    top: -1em;
+    transform: rotate(-7deg); }
+  .overlap-blocks p:nth-child(6) {
+    left: 0em;
+    transform: rotate(-5deg);
+    top: 5em; }
+  .overlap-blocks p:nth-child(7) {
+    transform: rotate(7deg);
+    top: 8em; }
+  .overlap-blocks p:nth-child(8) {
+    transform: rotate(7deg);
+    top: 5em; }
+  .overlap-blocks p:nth-child(9) {
+    transform: rotate(-2deg);
+    top: 5em; }
+  .overlap-blocks p:nth-child(10) {
+    transform: rotate(10deg);
+    top: 5em; }

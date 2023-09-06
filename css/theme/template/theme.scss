@@ -126,19 +126,28 @@
 
 .reveal ul {
 	list-style-type: none;
+	//color: $accentColor
 	//text-shadow: $headingTextShadow;
 
 }
 
 .reveal ul li {
 	margin-bottom: .75em;
+	color: #fff;
 }
 
-.reveal ul li:before { content: '✨'; margin-left: -20px; margin-right: 10px; } 
+.reveal ul li:before { 
+	//content: '📌'; 
+	content: '\2022';
+	color: $accentColor;
+	font-weight:bold;
+	margin-left: -20px; 
+	margin-right: 10px; 
+} 
 
 
 .reveal ul ul {
-	list-style-type: square;
+	list-style-type: none;
 }
 
 .reveal ul ul ul {

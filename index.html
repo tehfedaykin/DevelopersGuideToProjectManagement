@@ -3,31 +3,31 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="description"
-		content="Learn how to take advantage of writing Angular Schematics to boost your teams productivity.">
+		content="Project management is supposed to help us build software more efficiently, so why does it often feel like more of a hinderance? Do we really need SCRUM anyway? This talk is a pragmatic survival guide to help developers on projects with terrible project management. If you've ever been told by a Project Manager you can't do something because "it will effect the burndown chart" and yeeting said PM into the sun isn't an option - this talk will provide you efficient work-around strategies so you can spend more time doing what you love - writing code - and less time in frustrating, repetitive, and unproductive meetings.">
 	<meta name="keywords"
 		content="Jennifer Wadella, software engineer, women in tech speaker, female software engineer, female speaker, female founder, non-profit consultant, female coder, Kansas City Women in Technology, kcwit, kcwit founder, women engineers, girls in tech, women in tech, coding &amp; cocktails, coding &amp; cupcakes, CoderDojoKC">
-	<meta itemprop="name" content="Angular Magic with Angular Schematics">
+	<meta itemprop="name" content="A Developer's Guide to Surviving Sh*t Project Management">
 	<meta itemprop="description"
-		content="Learn how to take advantage of writing Angular Schematics to boost your teams productivity.">
+		content="Project management is supposed to help us build software more efficiently, so why does it often feel like more of a hinderance? Do we really need SCRUM anyway? This talk is a pragmatic survival guide to help developers on projects with terrible project management. If you've ever been told by a Project Manager you can't do something because "it will effect the burndown chart" and yeeting said PM into the sun isn't an option - this talk will provide you efficient work-around strategies so you can spend more time doing what you love - writing code - and less time in frustrating, repetitive, and unproductive meetings.">
 	<meta itemprop="image" content="https://AngularMagicSchematics.jenniferwadella.com/img/cover.png">
-	<meta property="og:title" content="Angular Magic with Angular Schematics">
+	<meta property="og:title" content="A Developer's Guide to Surviving Sh*t Project Management">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://AngularMagicSchematics.jenniferwadella.com/img/cover.png">
 	<meta property="og:url" content="https://AngularMagicSchematics.jenniferwadella.com/">
 	<meta property="og:description"
-		content="Learn how to take advantage of writing Angular Schematics to boost your teams productivity.">
+		content="Project management is supposed to help us build software more efficiently, so why does it often feel like more of a hinderance? Do we really need SCRUM anyway? This talk is a pragmatic survival guide to help developers on projects with terrible project management. If you've ever been told by a Project Manager you can't do something because "it will effect the burndown chart" and yeeting said PM into the sun isn't an option - this talk will provide you efficient work-around strategies so you can spend more time doing what you love - writing code - and less time in frustrating, repetitive, and unproductive meetings.">
 	<meta property="twitter:card" content="summary">
-	<meta property="twitter:title" content="Angular Magic with Angular Schematics">
+	<meta property="twitter:title" content="A Developer's Guide to Surviving Sh*t Project Management">
 	<meta property="twitter:creator" content="@likeOMGitsFEDAY">
 	<meta property="twitter:image" content="https://AngularMagicSchematics.jenniferwadella.com/img/cover.png">
 	<meta property="twitter:url" content="https://AngularMagicSchematics.jenniferwadella.com/">
 	<meta property="twitter:description"
-		content="Learn how to take advantage of writing Angular Schematics to boost your teams productivity.">
+		content="Project management is supposed to help us build software more efficiently, so why does it often feel like more of a hinderance? Do we really need SCRUM anyway? This talk is a pragmatic survival guide to help developers on projects with terrible project management. If you've ever been told by a Project Manager you can't do something because "it will effect the burndown chart" and yeeting said PM into the sun isn't an option - this talk will provide you efficient work-around strategies so you can spend more time doing what you love - writing code - and less time in frustrating, repetitive, and unproductive meetings.">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-		<title>Angular Magic with Angular Schematics</title>
+		<title>A Developer's Guide to Surviving Sh*t Project Management</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -42,8 +42,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section id="title" data-background-color="rgba(0, 0, 0, 0.45)">
-					<h1>Angular Magic with Angular Schematics</h1>
-					<h6><span class="accent">Jennifer Wadella</span></h6>
+					<h1>A Developer's Guide to Surviving Sh*t Project Management</h1>
+					<h6><span class="accent special-font">Jennifer Wadella</span></h6>
 				</section>
 				<section id="me" data-background-color="rgba(0, 0, 0, 0.75)">
 					<div class="speaker-title">
@@ -59,8 +59,7 @@
 					</div>
 					<ul class="small">
 						<li>Director of Angular Development at <a href="https://www.bitovi.com">Bitovi</a></li>
-						<li>Cohost of Angular Plus Show Podcast</li>
-						<li>Angular GDE</li>
+						<li>Angular GDE, Cohost of the Angular+ Show</li>
 						<li>Kombucha brewin' crazy plant lady</li>
 					</ul>
 					<div class="warning">
@@ -68,142 +67,584 @@
 						<p class="smaller"> <i>This talk may contain strong language, harsh truths, and serious passion.</i></p>
 					</div>
 				</section>
+				<section id="is-it-done-yet">
+					<img src="img/fish.gif" alt="Is it done yet fish">
+				</section>
 				<section id="talk-goals" data-background-color="rgba(0, 0, 0, 0.75)">
 					<h2>Goals for This Talk</h2>
 					<ul>
-						<li class="fragment">Learn about Angular Schematics</li>
-						<li class="fragment">Learn how to create Angular Schematics</li>
-						<li class="fragment">Delight in automation</li>
+						<li class="fragment">Address Common Problems with Project Management</li>
+						<li class="fragment">Teach the Basics of GOOD Project Management</li>
+						<li class="fragment">Give You Strategies for when Project Management Goes Off the Rails</li>
 					</ul>
 				</section>
-				
-				<section id="schematics-defintion" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Angular Schematics</h3>
-					<p>A schematic is a template-based code generator that supports complex logic. 
-						It is a set of instructions for transforming a software project by generating or modifying code. </p>
-					<p>- <a href="https://angular.io/guide/schematics">https://angular.io/guide/schematics</a></p>
+				<section id="project-management-defintion" data-background-color="rgba(0, 0, 0, 0.75)">
+					<p><b>Project management</b> is the use of specific knowledge, skills, tools and techniques to <b><span class="strike fragment">hamper developer productivity.</span></b></p>
 				</section>
-				<section id="schematics-in-use" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Schematics in Every Day Use</h3>
-					<p>You've likely used schematics every day</p>
-					<p>✨ ng new ✨</p>
-					<p>✨ ng generate ✨</p>
-					<p>✨ ng update ✨</p>
+				<section id="project-management-defintion-take2" data-background-color="rgba(0, 0, 0, 0.75)">
+					<p><b>Project management</b> is the use of specific knowledge, skills, tools and techniques to <b class="fragment">deliver something of value to people.</b></p>
 				</section>
-				<section id="real-world" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>A Real World Example</h3>
-					<img src="img/nickpedromeme.gif" alt="Nick Cage Pedro Pascal Meme">
+				<section id="common-problems" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Common Project Management Problems</h3>
+					<div class="overlap-blocks">
+						<p class="fragment">Too much time in meetings</p>
+						<p class="fragment">Requirements changing on the fly</p>
+						<p class="fragment">QA reporting back bugs that aren't bugs</p>
+						<p class="fragment">Sprints resulting in missed deadlines and deathmarches</p>
+						<p class="fragment">Bugs missed in planning that resulting in overtime work</p>
+						<p class="fragment">Too <b>little</b> process</p>
+						<p class="fragment">Too <b>much</b> process</p>
+						<p class="fragment">Burn down chart driven development</p>
+						<p class="fragment">Unable to determine project timelines</p>
+						<p class="fragment">Stand-ups so long your chair thinks you ghosted it every morning</p>
+					</div>
+					
 				</section>
-				<section id="real-world-description" data-background-color="rgba(0, 0, 0, 0.75)">
-					<p>A team is using a 3rd party library to manage state between forms and ngrx. They've gotten pretty behind with updates 
-						and need to the current Angular version, <i>but this requires updating the 3rd party library as well.</i> 
-						</p>
-					<p>Unfortunately the 3rd party library has a breaking change 
-						to a commonly used function that's called 1000s of times throughout the codebase. The team must manually update all 
-						these calls ... or must they?</p>
+				<section id="win-the-game">
+					<blockquote>In order to win the game, you have to know the rules.</blockquote>
 				</section>
-				<section id="harness-power" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Let's Learn to Harness the Magic of Creating Our Own Schematics</h3>
-					<img class="plain" src="img/doctor-strange-magic.gif" alt="Dr. Strange creating magic">
-				</section>
-				<section id="schematics-overview" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Schematics Key Concepts</h3>
+				<section id="pm-methodoligies" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Project Management Approaches</h3>
 					<ul>
-						<li>Virtual File System</li>
-						<li>Transformations</li>
-						<li>Rules</li>
-						<li>Schematic Prompts</li>
-						<li>AST</li>
+						<li>Waterfall</li>
+						<li>Agile</li>
+						<li>XGH</li>
 					</ul>
 				</section>
-				<section id="virtual-file-tree" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Virtual File System</h3>
-					<p>The virtual file system is represented by a Tree. The Tree data structure contains a base 
-						(a set of files that already exists) and a staging area (a list of changes to be applied to 
-						the base). When making modifications, you don't actually change the base, but add those 
-						modifications to the staging area.</p>
+				<section id="xgh" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>XGH - Extreme Go Horse</h3>
+					<p><a href="https://gist.github.com/banaslee/4147370">23 Axioms</a> to Live By for Professional Developers</p>
+					<p class="smaller fragment text-left"><i>11. XGH is anarchic.<br />
+						There's no need for a project manager. There's no owner and everyone does whatever they want when the problems and requirements appear.
+					</i></p>
+					<p class="smaller fragment text-left"><i>13. XGH is absolute.<br />
+						Delivery dates and costs are absolute things. Quality is relative. Never think about quality but instead think about the minimum time required to implement a solution. Actually, don't think. Do!</i></p>
+					<p class="smaller fragment text-left"><i>23. More is more.<br />
+						With XGH you thrive on code duplication - code quality is meaningless and there's no time for code reviews or refactoring.</i></p>
 				</section>
-				<section id="tree-interface" data-markdown="code/tree-interface.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="waterfall" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Waterfall</h3>
+					<img  src="img/waterfall-diagram.png" style="width:40%;" alt="Waterfall Project Management">
+					<p>Waterfall project management is a linear approach to delivering a project where phases are distinct & must be completed sequentially.</p>
+
+					<aside class="notes">
+						<p>Waterfall project management is a sequential, linear process of project management. 
+							It consists of several discrete phases. No phase begins until the prior phase is 
+							complete, and each phase’s completion is terminal—waterfall management does not 
+							allow you to return to a previous phase.</p>
+	
+						<p>Waterfall project management has its roots in non-software industries like 
+							manufacturing and construction, where the system arose out of necessity.</p>
+					</aside>
+				</section>
+				<section id="waterfall-pros-cons" data-background-color="rgba(0, 0, 0, 0.75)">
+					<div class="side-by-side">
+						<div class="left">
+							<h4>Pros</h4>
+							<ul>
+								<li>Training is simple</li>
+								<li>Easy to show progress</li>
+								<li>Easy to manage</li>
+							</ul>
+							<br /> <br />
+						</div>
+						<div class="right fragment">
+							<h4>Cons</h4>
+							<ul>
+								<li>Doesn’t allow for shifting requirements or change</li>
+								<li>Difficult for complex projects with dependencies</li>
+								<li>Slow feedback cycle</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section id="agile-definition" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Agile</h3>
+					<img src="img/agile-diagram.png" style="width:50%;" alt="Agile project management diagram">
+					<p>Agile project management is an iterative approach to delivering a project throughout its life cycle.					</p>
+				</section>
+				<section id="agile-waterfall-diagram" data-background-color="rgba(0, 0, 0, 0.75)">
+					<img src="img/Anlysis.png" alt="Waterfall vs agile diagram">
+				</section>
+				<section id="agile-manifesto" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Manifesto for Agile Software Development</h3>
+					<p class="smaller"><i>We are uncovering better ways of developing software by doing it and helping others do it.</i></p>
+					<br />
+					<p class="small">Through this work we have come to value:</p>
+					<p class="smaller fragment"><b>Individuals & interactions</b> over processes and tools</p>
+					<p class="smaller fragment"><b>Working software</b> over comprehensive documentation</p>
+					<p class="smaller fragment"><b>Customer collaboration</b> over contract negotiation</p>
+					<p class="smaller fragment"><b>Responding to change</b> over following a plan</p>
+					<br />
+					<p class="smaller fragment">That is, while there is value in the items on the right, we value the items on the left more.</p>
+			
 				</section>
 				<section id="transformations" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Transformations</h3>
-					<p>Create, Rename, Overwrite, Delete</p>
+					<h3>Agile Frameworks</h3>
+					<ul>
+						<li>Kanban</li>
+						<li>XP</li>
+						<li>SCRUM</li>
+						<li>SAFe</li>
+					</ul>
+					<p>They share Agile philosophy, roles, and sometimes ceremonies.</p>
 				</section>
-				<section id="rules" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Rules</h3>
-					<p>Define the changes you wish to make to the project</p>
+				<section id="my-job-is-just-beach">
+					<img src="img/job-code.jpg" alt="Ken My Job is Just Code">
+					<p class="smaller"><a href="https://badsoftwareadvice.substack.com/p/how-to-avoid-understanding-the-business">https://badsoftwareadvice.substack.com/p/how-to-avoid-understanding-the-business</a></p>
 				</section>
-				<section id="rule-interface" data-markdown="code/rule-interface.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="my-job-is-just-projectsuccess">
+					<img src="img/job-projectsuccess.jpg" alt="Ken My Job is Just Project Success">
 				</section>
-				<section id="prompts" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Schematic Prompts</h3>
-					<p>Prompts allow us to accept input from the user. </p>
-					<p>Three input types:</p>
+				<section id="kanban" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Kanban</h3>
+					<p>Kanban is a framework that provides visibility to an entire process and is commonly used for agile and DevOps to drive continuous delivery and improvement. </p>
+				</section>
+				<section id="kanban-meaning" data-background-color="rgba(0, 0, 0, 0.75)">
+					<blockquote class="special-font">The word kanban is Japanese and roughly translated means “card you can see.” 
+					</blockquote>
+				</section>
+				<section id="kanban-board" data-background-color="rgba(0, 0, 0, 0.75)">
+					<div class="kanban">
+						<div class="column">
+							<h4>To Do</h4>
+							<div class="card">
+								<p>Save the Project from Failing</p>
+							</div>
+							<div class="card">
+								<p>Acquire project management survival skills</p>
+							</div>
+							<div class="card">
+								<p>Learn to love Jira</p>
+							</div>
+						</div>
+						<div class="column">
+							<h4>In Progress</h4>
+							<div class="card">
+								<p>Learn about Kanban</p>
+							</div>
+						</div>
+						<div class="column">
+							<h4>Done</h4>
+							<div class="card">
+								<p>Learn about Extreme Programming</p>
+							</div>
+							<div class="card">
+								<p>Attend Jennifer's talk at Copenhagen Developers Festival </p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="XP" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>XP</h3>
+					<p>Extreme Programming (XP) is an agile software development framework that aims 
+						to produce higher quality software, and higher quality of life for the development team.</p>
+					<aside class="notes">
+						<p class="fragment smaller">XP is the most specific of the agile frameworks regarding appropriate engineering 
+							practices for software development, it is a discipline of software development based on values of 
+							simplicity, communication, feedback, courage, and respect. It works by bringing the whole team 
+							together in the presence of simple practices, with enough feedback to enable the team to see where 
+							they are and to tune the practices to their unique situation.</p>
+					</aside>	
+				</section>
+				<section id="xp-practices" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Extreme Programming Practices</h3>
+					<div class="grid">
+						<div class="card">
+							<p class="fragment text-left">1. <b>The Planning Game</b> addresses two key questions in software development: <br />
+								- predicting what will be accomplished by the due date<br />
+								- determining what to do next.</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">2. <b>Small Releases</b> means the team releases running, tested software, delivering business 
+								value chosen by the Customer, every iteration. The most important aspect is that the 
+								software is visible, and given to the customer, at the end of every iteration.</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">3. <b>Metaphor</b> is a simple evocative description of how the program works, like “this program 
+								works like a hive of bees, going out for pollen & bringing it back to the hive” as a description 
+								for an agent-based information retrieval system.</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">4. <b>Simple Design</b> means building the simple solution first, and not abstracting before needed. </p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">5. <b>Testing builds</b> tests against acceptance criteria and uses them to prove to themselves, and 
+								to the customer, that the feature is implemented correctly.
+							</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">6. <b>Refactoring</b> Design improvement and removal of duplication (a sure sign of poor design), and on 
+								increasing the “cohesion” of the code, while lowering the “coupling”</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">7. <b>Pair Programming</b> All production software in XP is built by two programmers, sitting side by side, 
+								at the same machine.</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">8. <b>Collective Ownership</b> any pair of programmers can improve any code at any time, no one person is responsible 
+								for knowing how one area of the codebase works. </p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">9. <b>Continuous Integration</b> multiple builds per day keep the system fully integrated at all times.</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">10. <b>40-hour week work</b> life balance makes better software</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">11. <b>On-site Customer</b> Customer is involved with requirements and review of delivery.</p>
+						</div>
+						<div class="card">
+							<p class="fragment text-left">12. <b>Coding Standard</b> Code must be formatted to agreed coding standards. Coding standards keep the code consistent 
+								and easy for the entire team to read and refactor. Code that looks the same encourages collective ownership.</p>
+						</div>
+					</div>
+				</section>
+				<section id="scrum" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>SCRUM</h3>
+					<p>Agile is a mindset, SCRUM is a framework. SCRUM describes a set of meetings, tools, 
+						and roles that work in concert to help teams structure and manage their work.</p>
+				</section>
+				<section id="key-concepts" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Key Concepts of SCRUM</h3>
+					<ul>
+						<li>Artifacts</li>
+						<li>Events</li>
+						<li>Roles</li>
+					</ul>
+				</section>
+				<section id="artifacts" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h4>SCRUM Artifacts</h4>
+					<div class="grid">
+						<div class="card">
+							<p><b>Product Backlog</b> is the primary list of work that needs to get done maintained by the 
+								product owner or product manager. This is a dynamic list of features, requirements, 
+								enhancements, and fixes that acts as the input for the sprint backlog. It is, 
+								essentially, the team’s “To Do” list. The product backlog is constantly revisited, 
+								re-prioritized and maintained by the Product Owner because, as we learn more or 
+								as the market changes, items may no longer be relevant or problems may get solved in other ways.</p>
+						</div>
+						<div class="card">
+							<p><b>Sprint Backlog</b> is the list of items, user stories, or bug fixes, selected by the development 
+								team for implementation in the current sprint cycle. Before each sprint, in the sprint planning meeting 
+								the team chooses which items it will work on for the sprint from the product backlog. A sprint backlog 
+								may be flexible and can evolve during a sprint.</p>
+						</div>
+						<div class="card">
+							<p>
+								<b>Increment (or Sprint Goal)</b> is the usable end-product from a sprint. You may not hear the word “increment” 
+								out in the world, as it’s often referred to as the team’s definition of “Done”, a milestone, the sprint goal, or 
+								even a full version or a shipped epic. It just depends on how your teams defines “Done” and how you define your sprint goals. 
+								Typically this is what is demoed after the sprint. 
+								</p>
+						</div>
+					</div>
+				</section>
+				<section id="events" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h4>SCRUM Events</h4>
+					<div class="grid">
+						<div class="card">
+							<p><b>Sprint</b> is time period the team does work. Two weeks is a common sprint length. Team members should pull 
+								tasks from sprint backlog as they complete other tasks.  </p>
+						</div>
+						<div class="card">
+							<p><b>Sprint Planning</b> is the meeting for the entire team to be understand the sprint goal, and commit to the 
+								work they think they can deliver. This is a time to review the definition of “done” for stories, 
+								clarify acceptance criteria, and agree on how they’ll execute the work. </p>
+						</div>
+						<div class="card">
+							<p><b>Daily SCRUM/standup</b> The purpose of the Daily Scrum is to inspect progress toward the Sprint Goal and 
+								adapt the Sprint Backlog as necessary, adjusting the upcoming planned work. Typically team answers:</p>
+								<ul>
+									<li>What did I do yesterday?</li>
+									<li>What do I plan to do today?</li>
+									<li>Are there any blockers?</li>
+								</ul>
+						</div>
+						<div class="card">
+							<p><b>Sprint Review</b> is an informal session to demo the increment, or whatever was produced.</p>
+						</div>
+						<div class="card">
+							<p><b>Sprint Retrospective</b> is where the team comes together to document and discuss what worked 
+								and what didn’t work in a sprint, a project, people or relationships, tools, or even for 
+								certain ceremonies.</p>
+						</div>
+						<div class="card">
+							<p><b>Backlog Grooming</b>** is an ongoing task of reviewing the backlog for prioritization and checking relevancy of items.</p>
+						</div>
+						<div class="card">
+							<p><b>Sprint Prep</b>** is a meeting before sprint planning to propose a sprint goal and get sprint backlog ready for the upcoming sprint planning. 
+							</p>
+						</div>
+						<p class="smaller">** teccccchnically these are not ceremonies, but are meetings that are important to have. = )
+						</p>
+					</div>
+				</section>
+				<section id="roles" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h4>SCRUM Roles</h4>
+					<div class="grid">
+						<div class="card">
+							<p><b>Product Owner</b> are the champions for their product. They are focused on 
+								understanding business, customer, and market requirements, then prioritizing 
+								the work to be done by the engineering team accordingly. Effective product owners:</p>
+								<ul>
+									<li>Build and manage the product backlog.</li>
+									<li>Closely partner with the business & team to ensure everyone understands the work items in the backlog.</li>
+									<li>Give the team clear guidance on which features to deliver next.</li>
+									<li>Decide when to ship the product with a predisposition towards more frequent delivery.</li>
+								</ul>
+						</div>
+						<div class="card">
+							<p><b>SCRUM Master</b> are the champions for scrum within their teams. They coach teams, 
+								product owners, and the business on the scrum process, and look for ways to fine-tune 
+								their practice of it. <b><i>An effective scrum master deeply understands the work being done 
+								by the team and can help the team optimize their transparency and delivery flow.</i></b> As the 
+								facilitator-in-chief, he/she schedules the needed resources (both human and logistical) 
+								for sprint planning, stand-up, sprint review, and the sprint retrospective.</p>
+						</div>
+						<div class="card">
+							<p><b>SCRUM development team</b> executes on the work to be done. Team members have differing 
+								skill sets, and cross-train each other so no one person becomes a bottleneck in the delivery 
+								of work. Strong scrum teams are self-organizing and approach their projects with a clear ‘we’ 
+								attitude. All members of the team help one another to ensure a successful sprint completion.</p>
+						</div>
+					</div>
+				</section>
+				<section id="scrum-framework">
+					<img src="img/scrumframework.png" alt="Scrum Framework">
+				</section>
+				<section id="SAFe" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>SAFe®</h3>
+					<p>The Scaled Agile Framework® (SAFe®) is a system for implementing Agile, Lean, and DevOps practices at scale.</p>
+				</section>
+				<section id="safe-principles" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Principles of SAFe®</h3>
+					<ol>
+						<li> Take an economic view</li>
+						<li>Apply systems thinking</li>
+						<li>Assume variability; preserve options</li>
+						<li>Build incrementally with fast, integrating learning cycles</li>
+						<li>Base milestones on objective evaluation of working systems</li>
+						<li>Visualize and limit WIP, reduce batch sizes, and manage queue lengths</li>
+						<li>Apply cadence, synchronize with cross-domain planning</li>
+						<li>Unlock the intrinsic motivation of knowledge workers</li>
+						<li>Decentralize decision-making</li>
+						<li>Organize around value</li>
+					</ol>
+				</section>
+				<section id="strategies" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Survival Strategies</h3>
+				</section>
+				<section id="strategy-list" data-background-color="rgba(0, 0, 0, 0.75)">
+					<ol>
+						<li class="fragment">Identify Your Project Management Methodology</li>
+						<li class="fragment">Advocate for Good Meeting Hygiene</li>
+						<li class="fragment">Don't Be Afraid to Propose Process Changes</li>
+						<li class="fragment">Understand Stakeholder Motivation</li>
+						<li class="fragment">Know your Tools</li>
+						<li class="fragment">Use Charts for Good, Not Evil</li>
+					</ol>
+				</section>
+				<section id="identify-methodology" data-background-color="rgba(0, 0, 0, 0.75)">
+					<section id="strategy-one" class="child-section-title">
+						<h3>Strategy One <br /> <span class="special-font">Identify Your Project Management Methodology</span></h3>
+					</section>
+					<section id="method-comparison" data-background-color="rgba(0, 0, 0, 0.75)">
+						<h3>Framework Comparisons</h3>
+						<div class="framework-compare">
+							<div class="column fragment">
+								<h4>XP</h4>
+								<ul class="smaller">
+									<li>Work in iterations that are one or two weeks long. </li>
+									<li>Flexible to change features within their iterations </li>
+									<li>Work in a strict priority order </li>
+									<li>Engineering practices - test-driven development, the focus on automated testing, pair programming, simple design, refactoring</li>
+								</ul>
+							</div>
+							<div class="column fragment">
+								<h4>Kanban</h4>
+								<ul class="smaller">
+									<li>Work on priority tasks whenever they come in</li>
+									<li>Constant stream of work without any bottlenecks</li>
+									<li>A Kanban board visualizes all the work within the project.</li>
+								</ul>
+							</div>
+							<div class="column fragment">
+								<h4>Scrum</h4>
+								<ul class="smaller">
+									<li>Self-organized</li>
+									<li>Cross-functional development teams </li>
+									<li>Work in close collaboration with the customer & stakeholders to add value to every step of the process </li>
+									<li>Targeting a goal of continuous improvement.</li>
+								</ul>
+							</div>
+							<div class="column fragment">
+								<h4>SAFe®</h4>
+								<ul class="smaller">
+									<li>Agile at scale</li>
+									<li>Working with multiple agile teams</li>
+									<li>Cross domain planning</li>
+									<li>Prioritization around business value</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section id="other-is-option">
+						<blockquote class="special-font">"None of the Above" and "all of the above" are also options 😬</blockquote>
+					</section>
+				</section>
+				<section id="advocate-meeting-hygiene" data-background-color="rgba(0, 0, 0, 0.75)">
+					<section id="strategy-two">
+						<h3>Strategy Two <br /> <span class="special-font">Advocate for Meeting Hygiene</span></h3>
+						<img src="img/meeting-email.jpg" width="40%" alt="That meeting could have been an email sign">
+					</section>
+					<section id="meetings-arent-evil">
+						<h4>Meetings aren't Evil</h4>
+						<p>When they're used effectively they can improve productivity</p>
+					</section>
+					<section id="daily-standup-dragging" data-background-color="rgba(0, 0, 0, 0.75)">
+						<h3>Keep Daily Standup to 15 Minutes</h3>
 						<ul>
-							<li>confirmation</li>
-							<li>input</li>
-							<li>list</li>
+							<li class="small">Choose a consistent place and time</li>
+							<li class="small">Avoid the blocker rabbit hole - this is not a problem-solving meeting 🙃</li>
+							<li>Remember this is not a status meeting</li>
+							<li class="small">Developers inspect their progress toward the Sprint Goal</li>
+							<li class="small">Developers create a plan for the next working day</li>
 						</ul>
+					</section>
+					<section id="meeting-agenda">
+						<h3>Meeting Coordinating Best Practices</h3>
+						<ul>
+							<li class="fragment small">Ask "could this meeting be an email?"</li>
+							<li class="fragment small">Create & send out an agenda ahead of time
+								<ul>
+									<li>Outline topics</li>
+									<li>Set a goal for the meeting outcome</li>
+								</ul>
+							</li>
+							<li class="fragment small">Ensure invite goes out to necessary people, and doesn't to people who don't need to be there</li>
+							<li class="fragment small">Take notes during meeting (or select a scribe)</li>
+							<li class="fragment small">Create action items, make sure anything to be done has an individual assigned to owning it’s execution</li>
+						</ul>
+					</section>
+					<section id="meeting-redirection">
+						<h3>Gently Correct Meetings</h3>
+						<p>"Could we table this discussion, and set another meeting to go more in depth with the people who need to be there?"</p>
+					</section>
+					<section id="technical-decision-documenåt">
+						<h3>Use a Technical Decision Document</h3>
+						<p>Capture key points of technical decision making discussions and save in your company wiki.</p>
+					</section>
 				</section>
-				<section id="prompt-schema" data-markdown="code/prompt-schema.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="propose-process-change" data-background-color="rgba(0, 0, 0, 0.75)">
+					<section id="strategy-three">
+						<h3>Strategy Three <br /> <span class="special-font">Don't Be Afraid to Propose Process Changes</span></h3>
+					</section>
+					<section id="process-in-retros">
+						<h4>Bring up Concerns/Changes in Retrospectives</h4>
+						<p class="fragment">What's going well?</p>
+						<p class="fragment">What Should We Continue Doing?</p>
+						<p class="fragment">What Should We Stop Doing?</p>
+					</section>
+					<section id="documented-process">
+						<blockquote class="special-font">"Process does not exist unless it is documented" - Jennifer’s first rule of Project Management. </blockquote>
+					</section>
+					<section id="process-overview">
+						<p>Process should aid development & help people follow the same steps to handle issues. 
+						<span class="fragment">Process includes tools like internal wikis, issue trackers, version control, UX feedback, QA feedback, deployment and more.</span>
+						<span class="fragment">Process should be iterated on and improved to avoid repeated bottlenecks</span></p>
+					</section>
+					<section id="definition-ready" data-background-color="rgba(0, 0, 0, 0.75)">
+						<h3>Create the Definition of Ready</h3>
+						<p>"Ready" means that stories are be immediately actionable. The Team must be able to determine what needs to be done and the amount of work required to complete the ticket for it to be considered ready. </p>
+					</section>
+					<section id="selena-knows">
+						<p>Me when I'm not constantly begging for requirements when I'm assigned a ticket for the sprint because our team added that to our definition of ready.</p>
+						<img src="img/selenagomez.webp" alt="Selena Gomez in blanket">
+					</section>
+					<section id="definition-done" data-background-color="rgba(0, 0, 0, 0.75)">
+						<h3>Create the Definition of Done</h3>
+						<p>"Done" is an agreed-upon set of items that must be completed before a project or user story can be considered complete. It is applied consistently and serves as an official gate separating things from being “in progress” to “done.”</p>
+					</section>
+					<section id="create-workflows">
+						<h4>Create Workflows</h4>
+						<p class="smaller">A workflow can be defined as “orchestrated and repeatable pattern of activity”. Workflows must be created to execute on work. To create an appropriate workflow you may need to answer questions like:</p>
+						<div class="overlap-blocks">
+							<p class="fragment">How does the work that needs be done get described to the developer?</p>
+							<p class="fragment">Are there mockups representing the work?</p>
+							<p class="fragment">How are mockups delivered and described?</p>
+							<p class="fragment">How can the developer verify the work has been completed?</p>
+							<p class="fragment">How should a QA be able to test work?</p>
+							<p class="fragment">How can acceptance criteria be created?</p>
+							<p class="fragment">How should deployment work?</p>
+							<p class="fragment">Is there user testing?</p>
+							<p class="fragment">What happens if an issue is blocked?</p>
+							<p class="fragment">Does code need to be reviewed in PRs?</p>
+						</div>
+
+					</section>
 				</section>
-				<section id="ast" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>AST</h3>
-					<p><b>Abstract Syntax Tree</b> - is a tree representation of the source code of a computer program that 
-						conveys the structure of the source code. Each node in the tree represents a construct occurring 
-						in the source code.</p>
-						<p>Shout out for Craig Spence's <a href="https://github.com/phenomnomnominal/tsquery">https://github.com/phenomnomnominal/tsquery</a></p>
-						<p>Viz Tools: <a href="https://estools.github.io/esquery/">EsQuery</a> | <a href="https://astexplorer.net/">AST Explorer</a> | <a href="https://tsquery-playground.firebaseapp.com/">TsQuery Playground</a></p>
+				<section id="understand-stakeholder-motivation" data-background-color="rgba(0, 0, 0, 0.75)">
+					<section id="strategy-four">
+						<h3>Strategy Four <br /> <span class="special-font">Understand Stakeholder Motivation</span></h3>
+						<img src="img/rebecca-tedlasso.gif" alt="Rebecca rolling up window">
+					</section>
+					<section>
+						<h4>Who IS a stakeholder?</h4>
+						<p class="fragment">Any individual, group or organization that can affect, be affected by, or perceive itself to be affected by, an initiative</p>
+						<img class="fragment" src="img/chicken-pig.webp" alt="Chicken and pig">
+					</section>
 				</section>
-				<section id="broken-code" data-markdown="code/broken-code.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="know-your-tools" data-background-color="rgba(0, 0, 0, 0.75)">
+					<section id="strategy-five">
+						<h3>Strategy Five <br /> <span class="special-font">Know Your Tools</span></h3>
+					</section>
 				</section>
-				<section id="install-schematics" data-markdown="code/install-schematics.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="use-charts-for-good" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h3>Strategy Six <br /> <span class="special-font">Use Charts for Good, Not Evil</span></h3>
 				</section>
-				<section id="create-schematics" data-markdown="code/create-schematics.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="charts-for-good" data-background-color="rgba(0, 0, 0, 0.75)">
+					<img width="50%" src="img/burndownchart.gif" alt="">
 				</section>
-				<section id="schematic-goals" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Our Schematic Should:</h3>
+				<section id="gantt-chart" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h4>Gantt Chart</h4>
+					<p class="small">A Gantt chart provides you the timeline view of your projects. It allows you to visualize how different tasks/activities of a project are connected with each other and how they fit in the overall timeline of the project.</p>
+					<img src="img/gantt1.png" class="fragment img-overlap"alt="Gantt chart">
+					<img src="img/gantt2.png" class="fragment img-overlap2" alt="Gantt chart">
+				</section>
+				<section id="burndown" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h4>Burndown Chart</h4>
+					<p class="small">A burndown chart shows the amount of work that has been completed in an epic or sprint, 
+						and the total work remaining. Burndown charts are used to predict your team's likelihood of completing 
+						their work in the time available. They're also great for keeping the team aware of any scope creep that 
+						occurs.</p>
+						<img src="img/burndown1.png" class="fragment img-overlap"alt="Burndown chart">
+					<img src="img/burndown2.png" class="fragment img-overlap2" alt="Burndown chart">
+				</section>
+				<section id="charting-tools" data-background-color="rgba(0, 0, 0, 0.75)">
+					<h4>Charting Tools</h4>
 					<ul>
-						<li class="fragment">Look through all application files to find instances of affected function</li>
-						<li class="fragment">Get contents of affected files.</li>
-						<li class="fragment">Swap parameters of affected functions</li>
-						<li class="fragment">Overwrite affected files with new content containing param swap</li>
+						<li>Best - Your Clients Project Management Tool (Jira, Trello, Radar, Github)</li>
+						<li>Miro</li>
+						<li>Lucidchart</li>
+						<li>Good ol’ Google Sheets (or Excel 🤮)</li>
+						<li>MS Project</li>
 					</ul>
 				</section>
-				<section id="write-schematic" data-markdown="code/write-schematic.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
+				<section id="strategies-applied">
+					<section id="applied-title">
+						<h3>Applying Strategies to Common Problems</h3>
+					</section>
+					<section id="solved-too-much-time">
+						<h3>Problem: Too Much Time in Meetings</h3>
+						<p>Fix: </p>
+					</section>
+					<section id="is-our-project-management-working">
+						<h3>Is Our Current Project Management Approach Helping Us Reach our Business Goals for Shipping Software?</h3>
+					</section>
 				</section>
-				<section id="build-schematic" data-markdown="code/build-schematic.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
-				</section>
-				<section id="run-schematic" data-markdown="code/run-schematic.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
-				</section>
-				<section id="add-to-workspace" data-markdown="code/add-to-workspace.md" data-separator="^\n\n\n"
-					data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15" data-background-color="rgba(0, 0, 0, 0.7)">
-				</section>
-				<section id="rejoyce" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Rejoyce in the Automation That Unfolds</h3>
-				</section>
-				<section id="tips-n-tricks" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h3>Tips & Tricks</h3> 
-					<ul>
-						<li class="fragment">Don't forget to build after making changes to your schematic</li>
-						<li class="fragment">Schematics can be chained! Use what's already available!</li>
-						<li class="fragment">Let TypeScript be Your Guide </li>
-						<li class="fragment">Get comfortable with AST + viz tools</li>
-					</ul>
-				</section>
-				<section id="demo" data-background-color="rgba(0, 0, 0, 0.75)">
-					<h2>Demo Available At:</h2>
-					<p><a href="https://github.com/tehfedaykin/AngularMagicSchematicsDemo">https://github.com/tehfedaykin/AngularMagicSchematicsDemo</a></p>
-				</section>
+
+				
 				<section id="questions" data-background-color="rgba(0, 0, 0, 0.75)">
 					<h2>Questions?</h2>
 					<p>Slides available at: <br />
@@ -214,7 +655,7 @@
 			</div>
 		</div>
 		<div class="twitter-overlay">
-			<span class="accent">@likeOMGitsFEDAY</span> <span>#angularMagicSchematics</span>
+			<span class="accent">@likeOMGitsFEDAY</span> <span>#survivingPM</span>
 		</div>
 
 		<script src="dist/reveal.js"></script>

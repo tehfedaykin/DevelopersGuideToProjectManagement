@@ -14,19 +14,21 @@
 // Include theme-specific fonts
 @import url(./fonts/source-sans-pro/source-sans-pro.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;700;900&display=swap');// Override theme settings (see ../template/settings.scss)
-$backgroundColor: #100f0f;
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,500;10..48,800&family=Libre+Franklin:ital,wght@0,100;0,600;0,900;1,100;1,400&family=Shadows+Into+Light+Two&display=swap');$backgroundColor: #100f0f;
 
 $mainColor: #ffffff;
 $headingColor: #e8ebdc;
 
 $mainFontSize: 42px;
-$mainFont: 'Poppins', sans-serif, Helvetica, sans-serif;
-$headingFont: 'Poppins', sans-serif, Helvetica, sans-serif;
+$mainFont:  'Libre Franklin', sans-serif;
+$headingFont:  'Libre Franklin', sans-serif;
+$specialFont: 'Shadows Into Light Two', cursive;
 $headingTextShadow: 1px 3px 5px #000;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $headingFontWeight: 600;
-$linkColor: #dc991d;
+$linkColor: #0aedea;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
@@ -40,10 +42,10 @@ $heading4Size: 1.0em;
 
 @mixin bodyBackground() {
 	background-color: $backgroundColor;
-  	background-image: url("../../img/elena-mozhvilo-JWtNpyXy-fQ-unsplash.jpg");
+  	background-image: url("../../img/lukas-tennie-54Pfu4EK4pc-unsplash.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
-	background-position: bottom center;
+	background-position: top center;
 }
 
 // Theme template ------------------------------
